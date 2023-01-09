@@ -4,6 +4,9 @@ class DatasBR:
   def __init__(self):
     self.momento_cadastro = datetime.today()
     
+  def __str__(self):
+    return self.formata()
+  
   def mes_cadastro(self):
     meses_do_ano = [
       "Janeiro", "Fevereiro", "Março",
@@ -26,9 +29,6 @@ class DatasBR:
   def formata(self):
     data_formatada = self.momento_cadastro.strftime("%d/%m/%Y %H:%M")
     return data_formatada
-  
-  def __str__(self):
-    return self.formata()
   
   def tempo_cadastro(self):
     tempo = (datetime.today() + timedelta(weeks=3, days=30)) - self.momento_cadastro
